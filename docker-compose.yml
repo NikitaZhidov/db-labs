@@ -1,0 +1,8 @@
+version: '3.9'
+services:
+  redis:
+    image: redis
+    volumes:
+      - ./databases/redis/data:/data
+    ports:
+      - '6379:6379'
