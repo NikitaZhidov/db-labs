@@ -6,3 +6,9 @@ services:
       - ./databases/redis/data:/data
     ports:
       - '6379:6379'
+  mongo:
+    image: mongo
+    volumes:
+      - ./databases/mongodb/data:/data/db
+    ports:
+      - '27017:27017'

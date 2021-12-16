@@ -6,6 +6,7 @@ import 'normalize.css';
 import { Link, Route, Routes } from 'react-router-dom';
 import { RedisPage } from './TasksPages/Redis/RedisPage';
 import { TaskTitle } from './ui/TaskTitle';
+import { MongoPage } from './TasksPages/Mongo/MongoPage';
 
 function App() {
   return (
@@ -13,9 +14,14 @@ function App() {
       <AppBar position="static" color="primaryDark">
         <Container>
           <Toolbar>
-            <Link to={AppRoutes.RedisPage}>
+            <Link className="nav-link" to={AppRoutes.RedisPage}>
               <Button variant="contained" color="primary">
                 Redis
+              </Button>
+            </Link>
+            <Link className="nav-link" to={AppRoutes.MongoPage}>
+              <Button variant="contained" color="primary">
+                Mongo
               </Button>
             </Link>
           </Toolbar>
@@ -25,6 +31,9 @@ function App() {
         <TaskTitle text={'Лабораторные работы по БД'} />
         <Routes>
           <Route path={AppRoutes.RedisPage} element={<RedisPage />}></Route>
+        </Routes>
+        <Routes>
+          <Route path={AppRoutes.MongoPage} element={<MongoPage />}></Route>
         </Routes>
       </Container>
     </ThemeProvider>
